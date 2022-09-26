@@ -39,4 +39,3 @@ let operate = (a, b) => {
     }
     
 }
-operate();
