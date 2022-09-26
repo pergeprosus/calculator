@@ -1,21 +1,21 @@
 //Addition
 let add = (a, b) => {
-    console.log(a + b);
+    
     return a + b;
 }
 //Subtraction
 let subtract = (a, b) => {
-    console.log(a - b);
+    
     return a - b;
 }
 //Multiplication
 let multiply = (a, b) => {
-    console.log(a * b);
+    
     return a * b;
 }
 //Division
 let divide = (a, b) => {
-    console.log(a / b);
+    
     return a / b;
 }
 let operate = (a, b) => {
@@ -25,17 +25,18 @@ let operate = (a, b) => {
     let opp = prompt("Operator");
     let num2 = prompt("Second number");
     let number2 = parseInt(num2);
-    if (opp.includes("/")) {
+    if (opp == ("/")) {
         console.log(divide(number1, number2))
     }
-    if (opp.includes("+")) {
+    if (opp == ("+")) {
         console.log(add(number1, number2))
     }
-    if (opp.includes("*") || opp.includes("x" || opp.includes("X"))) {
+    if (opp ==("*") || opp.includes("x" || opp.includes("X"))) {
         console.log(multiply(number1, number2))
     }
-    if (opp.includes("-")) {
+    if (opp ==("-")) {
         console.log(subtract(number1, number2))
     }
+    
 }
 operate();
