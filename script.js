@@ -24,7 +24,8 @@ let operate = (a, b) => {
     let opp = prompt("Operator");
     let num2 = prompt("Second number");
     let number2 = parseInt(num2);
-
-    console.log(number1 + number2)
-}  
+    if (opp.includes("*") || opp.includes("x" || opp.includes("X"))) {
+        console.log(multiply(number1, number2))
+    }
+}
 operate();
