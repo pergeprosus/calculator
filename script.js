@@ -1,20 +1,23 @@
+//Addition
 let add = (a, b) => {
     console.log(a + b);
     return a + b;
 }
-add(5, 5);
+//Subtraction
 let subtract = (a, b) => {
     console.log(a - b);
     return a - b;
 }
-subtract(5, 5);
+//Multiplication
 let multiply = (a, b) => {
     console.log(a * b);
     return a * b;
 }
-multiply(5, 5);
+//Division
 let divide = (a, b) => {
     console.log(a / b);
     return a / b;
 }
-divide(5, 5);
+let operate = (a, b) => {
+    
+}
