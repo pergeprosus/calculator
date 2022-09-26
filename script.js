@@ -19,13 +19,23 @@ let divide = (a, b) => {
     return a / b;
 }
 let operate = (a, b) => {
+    //Might need to change "includes" to "is" so that it's absolute and stuff
     let num1 = prompt("First number");
     let number1 = parseInt(num1);
     let opp = prompt("Operator");
     let num2 = prompt("Second number");
     let number2 = parseInt(num2);
+    if (opp.includes("/")) {
+        console.log(divide(number1, number2))
+    }
+    if (opp.includes("+")) {
+        console.log(add(number1, number2))
+    }
     if (opp.includes("*") || opp.includes("x" || opp.includes("X"))) {
         console.log(multiply(number1, number2))
+    }
+    if (opp.includes("-")) {
+        console.log(subtract(number1, number2))
     }
 }
 operate();
