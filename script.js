@@ -39,13 +39,13 @@ let operate = (a, b) => {
     }
     
 }
-//Button creation
-let calcbutton = document.createElement("calcbutton");
+//Testing button functionality
+let buttontest = document.getElementById("calcbutton");
+let allbuttons = document.getElementsByTagName("button");
+let inputdisplay = document.getElementById("inputdisplay");
 
-
-function buttoncreation() {
-    for (let i = 0; i < 20; i++) {
-        buttonbox.appendChild(calcbutton);
-    }
+for (i = 0; i < allbuttons.length; i++) {
+    allbuttons[i].addEventListener('click', function () {
+        alert("pressed!");
+    })
 }
-buttoncreation();
