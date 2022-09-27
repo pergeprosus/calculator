@@ -70,7 +70,7 @@ body, html {
     border: 0.5px solid darkgreen;
     text-align: center;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     padding: 0;
     margin: 0.2vh;
     border-radius: 4vh;
@@ -85,4 +85,9 @@ body, html {
     width: 100%;
     flex-grow: 1;
     display: inline-flex;
+}
+
+#buttontext {
+    margin: 0;
+    padding: 0;
 }
