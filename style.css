@@ -51,6 +51,8 @@ body, html {
     border: 1px solid black;
     height: 10vh;
     align-self: center;
+    display: flex;
+    flex-direction: column;
 }
 #buttonbox {
     width: 49vh;
@@ -93,4 +95,21 @@ body, html {
     font-size: 3vh;
     text-shadow: 1px 1px black;
     color: white;
+    font-weight: bolder;
+}
+
+#mathdisplay {
+font-size: 2vh;
+width: 97%;
+text-align: end;
+margin-left: 1%;
+}
+
+#inputdisplay {
+    font-size: 4vh;
+    width: 97%;
+text-align: end;
+margin-left: 1%;
+font-weight: bolder;
+
 }
