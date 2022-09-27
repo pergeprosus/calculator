@@ -25,10 +25,24 @@ body, html {
     color:  #f9f6f4;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 0;
+    margin: 0;
+    text-align: left;
+    padding-left: 0.3vh;
+    text-shadow: 1px 1px black;
+}
+
+#subhead {
+    font-size: 1vh;
+    text-align: left;
+    padding-left: 0.4vh;
+    margin: 0;
+
 }
 
 #calctitle {
    margin:0;
+   display: flex;
+   flex-direction: column;
 }
 
 #display {
