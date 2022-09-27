@@ -1,21 +1,21 @@
 //Addition
 let add = (a, b) => {
-    
+
     return a + b;
 }
 //Subtraction
 let subtract = (a, b) => {
-    
+
     return a - b;
 }
 //Multiplication
 let multiply = (a, b) => {
-    
+
     return a * b;
 }
 //Division
 let divide = (a, b) => {
-    
+
     return a / b;
 }
 let operate = (a, b) => {
@@ -31,21 +31,23 @@ let operate = (a, b) => {
     if (opp == ("+")) {
         console.log(add(number1, number2))
     }
-    if (opp ==("*") || opp.includes("x" || opp.includes("X"))) {
+    if (opp == ("*") || opp.includes("x" || opp.includes("X"))) {
         console.log(multiply(number1, number2))
     }
-    if (opp ==("-")) {
+    if (opp == ("-")) {
         console.log(subtract(number1, number2))
     }
-    
+
 }
 //Testing button functionality
 let buttontest = document.getElementById("calcbutton");
 let allbuttons = document.getElementsByTagName("button");
 let inputdisplay = document.getElementById("inputdisplay");
-
+let max = 0;
 for (i = 0; i < allbuttons.length; i++) {
     allbuttons[i].addEventListener('click', function () {
-        alert("pressed!");
+        if (max <= 12)
+        inputdisplay.innerHTML += "7";
+        max++
     })
 }
