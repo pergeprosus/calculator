@@ -39,6 +39,11 @@ let operate = (a, b) => {
     }
 
 }
+
+//Array of numbers testing
+let numarray = [];
+
+
 //Testing button functionality
 let buttontest = document.getElementById("calcbutton");
 let allbuttons = document.getElementsByTagName("button");
@@ -46,8 +51,11 @@ let inputdisplay = document.getElementById("inputdisplay");
 let max = 0;
 for (i = 0; i < allbuttons.length; i++) {
     allbuttons[i].addEventListener('click', function () {
-        if (max <= 12)
+        if (max <= 12) {
         inputdisplay.innerHTML += "7";
+        numarray += 7;
+        console.log(numarray)
         max++
+        }
     })
 }
