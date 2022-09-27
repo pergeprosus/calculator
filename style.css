@@ -28,28 +28,42 @@ body, html {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #display {
-    width: 40vh;
+    width: 46vh;
     background-color: white;
     border: 1px solid black;
     height: 10vh;
     align-self: center;
 }
 #buttonbox {
-    width: 40vh;
-    border: 1px solid black;
-    height: 49vh;
+    width: 49vh;
+    height: 60vh;
     align-self: center;
-    margin-top: 1vh;
     flex-wrap: wrap;
     flex-direction: row;
     display: flex;
+    margin: 5vh;
+    margin-top: 1vh;
 }
 
 #calcbutton {
     display: inline-block;
-    background-color: pink;
+    background-color: green;
     flex-grow: 1;
-    border: 1px solid black;
-    min-width: 8vh;
-    min-height: auto;
+    border: 0.5px solid darkgreen;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    padding: 0;
+    margin: 0.2vh;
+    border-radius: 4vh;
+}
+
+.eleven {
+    height: 10vh;
+}
+
+#row {
+    width: 100%;
+    flex-grow: 1;
+    display: inline-flex;
 }
