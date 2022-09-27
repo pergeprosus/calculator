@@ -78,6 +78,9 @@ body, html {
     border-radius: 4vh;
     display: flex;
 }
+#calcbutton:hover {
+    background-color: lightgreen;
+}
 
 .eleven {
     height: 10vh;
