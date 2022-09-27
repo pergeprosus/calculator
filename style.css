@@ -34,3 +34,22 @@ body, html {
     height: 10vh;
     align-self: center;
 }
+#buttonbox {
+    width: 40vh;
+    border: 1px solid black;
+    height: 49vh;
+    align-self: center;
+    margin-top: 1vh;
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+}
+
+#calcbutton {
+    display: inline-block;
+    background-color: pink;
+    flex-grow: 1;
+    border: 1px solid black;
+    min-width: 8vh;
+    min-height: auto;
+}

@@ -39,3 +39,13 @@ let operate = (a, b) => {
     }
     
 }
+//Button creation
+let calcbutton = document.createElement("calcbutton");
+
+
+function buttoncreation() {
+    for (let i = 0; i < 20; i++) {
+        buttonbox.appendChild(calcbutton);
+    }
+}
+    buttoncreation();
