@@ -78,7 +78,7 @@ for (i = 0; i < allbuttons.length; i++) {
             // if (typeof firstequationumber != []])
             parseInt(but.id);
             firstequationumber += but.id;
-            inputdisplay.innerHTML = firstequationumber;
+            inputdisplay.innerHTML += but.id
             max++;
             console.log(firstequationumber);
         }
@@ -96,7 +96,7 @@ reset.addEventListener('click', function () {
 plusbutton.addEventListener('click', function () {
     if (bothnumbers.length == 0) {
         bothnumbers.splice(0, 1, firstequationumber);
-        inputdisplay.innerHTML += "+";
+        inputdisplay.innerHTML += " +";
         firstequationumber = [];
         opp = ("+");
     }
@@ -106,7 +106,7 @@ plusbutton.addEventListener('click', function () {
 minusbutton.addEventListener('click', function () {
     if (bothnumbers.length == 0) {
         bothnumbers.splice(0, 1, firstequationumber);
-        inputdisplay.innerHTML += "-";
+        inputdisplay.innerHTML += " -";
         firstequationumber = [];
         opp = ("-");
     }
@@ -116,7 +116,7 @@ minusbutton.addEventListener('click', function () {
 multiplybutton.addEventListener('click', function () {
     if (bothnumbers.length == 0) {
         bothnumbers.splice(0, 1, firstequationumber);
-        inputdisplay.innerHTML += "X";
+        inputdisplay.innerHTML += " x";
         firstequationumber = [];
         opp = ("*");
     }
@@ -126,7 +126,7 @@ multiplybutton.addEventListener('click', function () {
 divisionbutton.addEventListener('click', function () {
     if (bothnumbers.length == 0) {
         bothnumbers.splice(0, 1, firstequationumber);
-        inputdisplay.innerHTML += "/";
+        inputdisplay.innerHTML += " /";
         firstequationumber = [];
         opp = ("/");
     }
@@ -149,5 +149,6 @@ equalsbutton.addEventListener('click', function () {
             otherdisplay.innerHTML = "YOU CANT DO THAT!!! STOP!!!"
         }
         otherdisplay.innerHTML = operate(su1, su2);
+        bothnumbers = [];
     }
 });
