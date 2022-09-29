@@ -67,7 +67,7 @@ for (i = 0; i < allbuttons.length; i++) {
             firstequationumber += but.id;
             inputdisplay.innerHTML = firstequationumber;
             max++;
-            console.log(firstequationumber.length)
+            console.log(firstequationumber);
         }
     })
 }
@@ -76,8 +76,27 @@ reset.addEventListener('click', function () {
     currentequation = [];
     max = 0;
 });
+//Test for addition
 plusbutton.addEventListener('click', function () {
-    //let 
+    //let
+  
+    if (bothnumbers.length == 0) {
     bothnumbers.splice(0, 1, firstequationumber);
+    inputdisplay.innerHTML += "+";
+    firstequationumber = [];
+   }
     console.log(bothnumbers);
+});
+//Finding answer
+equalsbutton.addEventListener('click', function () {
+    console.log(firstequationumber);
+
+    if (bothnumbers.length != 0) {
+        bothnumbers.splice(1, 1, firstequationumber);
+        let n1 = bothnumbers[0];
+        let n2 = bothnumbers[1];
+        let su1 = parseInt(n1);
+        let su2 = parseInt(n2);
+        console.log(add(su1, su2))
+    }
 });
