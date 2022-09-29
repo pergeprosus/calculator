@@ -65,7 +65,8 @@ body, html {
     margin-top: 1vh;
 }
 
-.calcbutton {
+.calcbutton,
+.eqbutton {
     display: inline;
     background-color: green;
     flex-grow: 1;
@@ -78,7 +79,8 @@ body, html {
     border-radius: 4vh;
     display: flex;
 }
-#calcbutton:hover {
+.calcbutton:hover,
+.eqbutton:hover {
     background-color: lightgreen;
 }
 
