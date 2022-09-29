@@ -57,6 +57,7 @@ let otherdisplay = document.getElementById("inputdisplay")
 let equalsbutton = document.getElementById("equation");
 let plusbutton = document.getElementById("+");
 let minusbutton = document.getElementById("-");
+let multiplybutton = document.getElementById("ex");
 let resetbutton = document.getElementById("reset");
 //True false statements for deciding what calculation to do
 let ploose;
@@ -85,6 +86,7 @@ for (i = 0; i < allbuttons.length; i++) {
 //Clears the data and resets
 reset.addEventListener('click', function () {
     inputdisplay.innerHTML = "";
+    otherdisplay.innerHTML = "";
     currentequation = [];
     max = 0;
 });
@@ -105,6 +107,16 @@ minusbutton.addEventListener('click', function () {
         inputdisplay.innerHTML += "-";
         firstequationumber = [];
         opp = ("-");
+    }
+    console.log(bothnumbers);
+});
+//Multiplication button (self explanatory)
+multiplybutton.addEventListener('click', function () {
+    if (bothnumbers.length == 0) {
+        bothnumbers.splice(0, 1, firstequationumber);
+        inputdisplay.innerHTML += "X";
+        firstequationumber = [];
+        opp = ("*");
     }
     console.log(bothnumbers);
 });
