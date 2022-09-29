@@ -58,6 +58,7 @@ let equalsbutton = document.getElementById("equation");
 let plusbutton = document.getElementById("+");
 let minusbutton = document.getElementById("-");
 let multiplybutton = document.getElementById("ex");
+let divisionbutton = document.getElementById("/");
 let resetbutton = document.getElementById("reset");
 //True false statements for deciding what calculation to do
 let ploose;
@@ -88,6 +89,7 @@ reset.addEventListener('click', function () {
     inputdisplay.innerHTML = "";
     otherdisplay.innerHTML = "";
     currentequation = [];
+    firstequationumber = [];
     max = 0;
 });
 //Plus button for addition
@@ -120,6 +122,16 @@ multiplybutton.addEventListener('click', function () {
     }
     console.log(bothnumbers);
 });
+//Multiplication button (self explanatory)
+divisionbutton.addEventListener('click', function () {
+    if (bothnumbers.length == 0) {
+        bothnumbers.splice(0, 1, firstequationumber);
+        inputdisplay.innerHTML += "/";
+        firstequationumber = [];
+        opp = ("/");
+    }
+    console.log(bothnumbers);
+});
 //Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
     console.log(firstequationumber);
@@ -132,6 +144,10 @@ equalsbutton.addEventListener('click', function () {
         let su2 = parseInt(n2);
         //Operation
         operate(su1, su2);
+        //Eventually: make it so that if this already happened, use the operate answer maybe as a element as the first thing inside of the container.
+        if (operate(su1,su2) == su1 / 0) {
+            otherdisplay.innerHTML = "YOU CANT DO THAT!!! STOP!!!"
+        }
         otherdisplay.innerHTML = operate(su1, su2);
     }
 });
