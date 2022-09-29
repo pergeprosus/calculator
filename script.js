@@ -56,6 +56,9 @@ for (i = 0; i < allbuttons.length; i++) {
     let but = allbuttons[i];
     console.log(but.id)
     allbuttons[i].addEventListener('click', function () {
-       inputdisplay.innerHTML += but.id;
+       if (max < 12) {
+        inputdisplay.innerHTML += but.id;
+        max++;
+       }
     })
 }
