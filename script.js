@@ -18,32 +18,38 @@ let divide = (a, b) => {
 
     return a / b;
 }
+
+let opp;
 let operate = (a, b) => {
     //Might need to change "includes" to "is" so that it's absolute and stuff
-    let num1 = prompt("First number");
+    let num1 = a;
     let number1 = parseInt(num1);
-    let opp = prompt("Operator");
-    let num2 = prompt("Second number");
+    opp = prompt("Operator");
+    let num2 = b;
     let number2 = parseInt(num2);
     if (opp == ("/")) {
         console.log(divide(number1, number2))
+         return divide(number1, number2);
     }
     if (opp == ("+")) {
         console.log(add(number1, number2))
+        return add(number1, number2);
+
     }
     if (opp == ("*") || opp.includes("x" || opp.includes("X"))) {
         console.log(multiply(number1, number2))
+        return multiply(number1, number2);
+
     }
     if (opp == ("-")) {
         console.log(subtract(number1, number2))
+        return subtract(number1, number2);
+
     }
 
 }
-
 //Array of numbers testing
 let numarray = [];
-
-
 //Testing button functionality
 let buttontest = document.getElementById('calcbutton');
 let allbuttons = document.getElementsByClassName("calcbutton");
@@ -51,7 +57,11 @@ let inputdisplay = document.getElementById("mathdisplay");
 let equalsbutton = document.getElementById("equation");
 let plusbutton = document.getElementById("+");
 let resetbutton = document.getElementById("reset");
-
+//True false statements for deciding what calculation to do
+let ploose;
+let meenus;
+let diveed;
+let multood;
 //Maximum amount of numbers allowed on the display
 let max = 0;
 //Array to store the current equation
@@ -62,7 +72,7 @@ for (i = 0; i < allbuttons.length; i++) {
     let but = allbuttons[i];
     allbuttons[i].addEventListener('click', function () {
         if (max < 12) {
-           // if (typeof firstequationumber != []])
+            // if (typeof firstequationumber != []])
             parseInt(but.id);
             firstequationumber += but.id;
             inputdisplay.innerHTML = firstequationumber;
@@ -71,32 +81,37 @@ for (i = 0; i < allbuttons.length; i++) {
         }
     })
 }
+//Clears the data and resets
 reset.addEventListener('click', function () {
     inputdisplay.innerHTML = "";
     currentequation = [];
     max = 0;
 });
-//Test for addition
+//Plus button for addition
 plusbutton.addEventListener('click', function () {
-    //let
-  
     if (bothnumbers.length == 0) {
-    bothnumbers.splice(0, 1, firstequationumber);
-    inputdisplay.innerHTML += "+";
-    firstequationumber = [];
-   }
+        bothnumbers.splice(0, 1, firstequationumber);
+        inputdisplay.innerHTML += "+";
+        firstequationumber = [];
+        ploose = true;
+    }
     console.log(bothnumbers);
 });
-//Finding answer
+//Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
     console.log(firstequationumber);
-
+    //To see if the first slot isnt already taken (Might need modded soon)
     if (bothnumbers.length != 0) {
         bothnumbers.splice(1, 1, firstequationumber);
         let n1 = bothnumbers[0];
         let n2 = bothnumbers[1];
         let su1 = parseInt(n1);
         let su2 = parseInt(n2);
-        console.log(add(su1, su2))
+        //If it was addition
+        if (ploose = true) {
+            console.log(add(su1, su2))
+            inputdisplay.innerHTML = add(su1, su2);
+            ploose = false;
+        }
     }
 });
