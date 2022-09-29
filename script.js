@@ -23,12 +23,12 @@ let opp;
 let operate = (a, b) => {
     //Might need to change "includes" to "is" so that it's absolute and stuff
     let num1 = a;
-    let number1 = parseInt(num1);
+    let number1 = parseFloat(num1);
     let num2 = b;
-    let number2 = parseInt(num2);
+    let number2 = parseFloat(num2);
     if (opp == ("/")) {
         console.log(divide(number1, number2))
-         return divide(number1, number2);
+        return divide(number1, number2);
     }
     if (opp == ("+")) {
         console.log(add(number1, number2))
@@ -76,7 +76,7 @@ for (i = 0; i < allbuttons.length; i++) {
     allbuttons[i].addEventListener('click', function () {
         if (max < 12) {
             // if (typeof firstequationumber != []])
-            parseInt(but.id);
+            parseFloat(but.id);
             firstequationumber += but.id;
             inputdisplay.innerHTML += but.id
             max++;
@@ -96,7 +96,7 @@ reset.addEventListener('click', function () {
 plusbutton.addEventListener('click', function () {
     if (bothnumbers.length == 0) {
         bothnumbers.splice(0, 1, firstequationumber);
-        inputdisplay.innerHTML += " +";
+        inputdisplay.innerHTML += " + ";
         firstequationumber = [];
         opp = ("+");
     }
@@ -106,7 +106,7 @@ plusbutton.addEventListener('click', function () {
 minusbutton.addEventListener('click', function () {
     if (bothnumbers.length == 0) {
         bothnumbers.splice(0, 1, firstequationumber);
-        inputdisplay.innerHTML += " -";
+        inputdisplay.innerHTML += " - ";
         firstequationumber = [];
         opp = ("-");
     }
@@ -116,7 +116,7 @@ minusbutton.addEventListener('click', function () {
 multiplybutton.addEventListener('click', function () {
     if (bothnumbers.length == 0) {
         bothnumbers.splice(0, 1, firstequationumber);
-        inputdisplay.innerHTML += " x";
+        inputdisplay.innerHTML += " x ";
         firstequationumber = [];
         opp = ("*");
     }
@@ -126,7 +126,7 @@ multiplybutton.addEventListener('click', function () {
 divisionbutton.addEventListener('click', function () {
     if (bothnumbers.length == 0) {
         bothnumbers.splice(0, 1, firstequationumber);
-        inputdisplay.innerHTML += " /";
+        inputdisplay.innerHTML += " / ";
         firstequationumber = [];
         opp = ("/");
     }
@@ -140,15 +140,18 @@ equalsbutton.addEventListener('click', function () {
         bothnumbers.splice(1, 1, firstequationumber);
         let n1 = bothnumbers[0];
         let n2 = bothnumbers[1];
-        let su1 = parseInt(n1);
-        let su2 = parseInt(n2);
+        let su1 = parseFloat(n1);
+        let su2 = parseFloat(n2);
         //Operation
         operate(su1, su2);
         //Eventually: make it so that if this already happened, use the operate answer maybe as a element as the first thing inside of the container.
-        if (operate(su1,su2) == su1 / 0) {
+        if (operate(su1, su2) == su1 / 0) {
             otherdisplay.innerHTML = "YOU CANT DO THAT!!! STOP!!!"
         }
         otherdisplay.innerHTML = operate(su1, su2);
         bothnumbers = [];
     }
 });
+
+//Current goal: allow for automatic third number after first and second have been
+//applied. There can only be one thing one at once.
