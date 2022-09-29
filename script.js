@@ -53,8 +53,10 @@ let numarray = [];
 let buttontest = document.getElementById('calcbutton');
 let allbuttons = document.getElementsByClassName("calcbutton");
 let inputdisplay = document.getElementById("mathdisplay");
+let otherdisplay = document.getElementById("inputdisplay")
 let equalsbutton = document.getElementById("equation");
 let plusbutton = document.getElementById("+");
+let minusbutton = document.getElementById("-");
 let resetbutton = document.getElementById("reset");
 //True false statements for deciding what calculation to do
 let ploose;
@@ -96,6 +98,16 @@ plusbutton.addEventListener('click', function () {
     }
     console.log(bothnumbers);
 });
+//Minus button for subtraction
+minusbutton.addEventListener('click', function () {
+    if (bothnumbers.length == 0) {
+        bothnumbers.splice(0, 1, firstequationumber);
+        inputdisplay.innerHTML += "-";
+        firstequationumber = [];
+        opp = ("-");
+    }
+    console.log(bothnumbers);
+});
 //Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
     console.log(firstequationumber);
@@ -106,7 +118,8 @@ equalsbutton.addEventListener('click', function () {
         let n2 = bothnumbers[1];
         let su1 = parseInt(n1);
         let su2 = parseInt(n2);
-        //If it was addition
-        operate(su1, su2)
+        //Operation
+        operate(su1, su2);
+        otherdisplay.innerHTML = operate(su1, su2);
     }
 });
