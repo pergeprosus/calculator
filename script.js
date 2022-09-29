@@ -70,4 +70,5 @@ for (i = 0; i < allbuttons.length; i++) {
 reset.addEventListener('click', function () {
     inputdisplay.innerHTML = "";
     currentequation = [];
+    max = 0;
 });
