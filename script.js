@@ -47,7 +47,7 @@ let numarray = [];
 //Testing button functionality
 let buttontest = document.getElementById('calcbutton');
 let allbuttons = document.getElementsByClassName("calcbutton");
-let inputdisplay = document.getElementById("inputdisplay");
+let inputdisplay = document.getElementById("mathdisplay");
 let max = 0;
 
 for (i = 0; i < allbuttons.length; i++) {
