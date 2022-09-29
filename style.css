@@ -65,7 +65,7 @@ body, html {
     margin-top: 1vh;
 }
 
-#calcbutton {
+.calcbutton {
     display: inline;
     background-color: green;
     flex-grow: 1;
