@@ -46,21 +46,13 @@ let numarray = [];
 
 //Testing button functionality
 let buttontest = document.getElementById('calcbutton');
-let allbuttons = document.getElementsByTagName("button");
+let allbuttons = document.getElementsByClassName("calcbutton");
 let allbuttontext = document.getElementsByTagName("buttontext");
-let buttonvalue = document.getElementById('calcbutton').className;
 let inputdisplay = document.getElementById("inputdisplay");
 let seven = document.getElementsByClassName("seven");
 let max = 0;
 
 for (i = 0; i < allbuttons.length; i++) {
-    let buttontest = document.getElementById('calcbutton');
-    allbuttons[i].className = 1++;
-console.log(allbuttons[i].className;
-    ///allbuttons[i].addEventListener('click', function () {
-    //    if (max <= 12) {
-      //  inputdisplay.innerHTML += 1
-     //   }
-        
-   // })
+    let but = allbuttons[i];
+    console.log(but.id)
 }
