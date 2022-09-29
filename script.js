@@ -55,4 +55,7 @@ let max = 0;
 for (i = 0; i < allbuttons.length; i++) {
     let but = allbuttons[i];
     console.log(but.id)
+    allbuttons[i].addEventListener('click', function () {
+       inputdisplay.innerHTML += but.id;
+    })
 }
