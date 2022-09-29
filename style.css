@@ -109,10 +109,11 @@ body, html {
 }
 
 #mathdisplay {
-font-size: 2vh;
+font-size: 2.5vh;
 width: 97%;
 text-align: end;
 margin-left: 1%;
+height: 4vh;
 }
 
 #inputdisplay {

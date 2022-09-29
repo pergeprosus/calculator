@@ -48,15 +48,26 @@ let numarray = [];
 let buttontest = document.getElementById('calcbutton');
 let allbuttons = document.getElementsByClassName("calcbutton");
 let inputdisplay = document.getElementById("mathdisplay");
-let max = 0;
+let equalsbutton = document.getElementById("equation");
+let resetbutton = document.getElementById("reset");
 
+//Maximum amount of numbers allowed on the display
+let max = 0;
+//Array to store the current equation
+let currentequation = [];
+//Loop for adding click function to each button, and storing their ID
 for (i = 0; i < allbuttons.length; i++) {
     let but = allbuttons[i];
     console.log(but.id)
     allbuttons[i].addEventListener('click', function () {
        if (max < 12) {
-        inputdisplay.innerHTML += but.id;
+        currentequation += but.id;
+        inputdisplay.innerHTML = currentequation;
         max++;
        }
     })
 }
+reset.addEventListener('click', function () {
+    inputdisplay.innerHTML = "";
+    currentequation = [];
+});
