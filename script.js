@@ -24,7 +24,6 @@ let operate = (a, b) => {
     //Might need to change "includes" to "is" so that it's absolute and stuff
     let num1 = a;
     let number1 = parseInt(num1);
-    opp = prompt("Operator");
     let num2 = b;
     let number2 = parseInt(num2);
     if (opp == ("/")) {
@@ -93,7 +92,7 @@ plusbutton.addEventListener('click', function () {
         bothnumbers.splice(0, 1, firstequationumber);
         inputdisplay.innerHTML += "+";
         firstequationumber = [];
-        ploose = true;
+        opp = ("+");
     }
     console.log(bothnumbers);
 });
@@ -108,10 +107,6 @@ equalsbutton.addEventListener('click', function () {
         let su1 = parseInt(n1);
         let su2 = parseInt(n2);
         //If it was addition
-        if (ploose = true) {
-            console.log(add(su1, su2))
-            inputdisplay.innerHTML = add(su1, su2);
-            ploose = false;
-        }
+        operate(su1, su2)
     }
 });
