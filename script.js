@@ -94,42 +94,41 @@ reset.addEventListener('click', function () {
 });
 //Plus button for addition
 plusbutton.addEventListener('click', function () {
-    if (bothnumbers.length == 0) {
+   
         bothnumbers.splice(0, 1, firstequationumber);
         inputdisplay.innerHTML += " + ";
         firstequationumber = [];
         opp = ("+");
-    }
+
     console.log(bothnumbers);
 });
 //Minus button for subtraction
 minusbutton.addEventListener('click', function () {
-    if (bothnumbers.length == 0) {
         bothnumbers.splice(0, 1, firstequationumber);
         inputdisplay.innerHTML += " - ";
         firstequationumber = [];
         opp = ("-");
-    }
+    
     console.log(bothnumbers);
 });
 //Multiplication button (self explanatory)
 multiplybutton.addEventListener('click', function () {
-    if (bothnumbers.length == 0) {
+    
         bothnumbers.splice(0, 1, firstequationumber);
         inputdisplay.innerHTML += " x ";
         firstequationumber = [];
         opp = ("*");
-    }
+    
     console.log(bothnumbers);
 });
-//Multiplication button (self explanatory)
+//Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
-    if (bothnumbers.length == 0) {
+   
         bothnumbers.splice(0, 1, firstequationumber);
         inputdisplay.innerHTML += " / ";
         firstequationumber = [];
         opp = ("/");
-    }
+    
     console.log(bothnumbers);
 });
 //Equals button to decide the type of calculation
@@ -150,8 +149,11 @@ equalsbutton.addEventListener('click', function () {
         }
         otherdisplay.innerHTML = operate(su1, su2);
         bothnumbers = [];
+        bothnumbers[0] = operate(su1, su2);
     }
 });
 
 //Current goal: allow for automatic third number after first and second have been
 //applied. There can only be one thing one at once.
+
+//also theres a problem with bothnumbers
