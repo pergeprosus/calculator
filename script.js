@@ -27,21 +27,17 @@ let operate = (a, b) => {
     let num2 = b;
     let number2 = parseFloat(num2);
     if (opp == ("/")) {
-        console.log(divide(number1, number2))
         return divide(number1, number2);
     }
     if (opp == ("+")) {
-        console.log(add(number1, number2))
         return add(number1, number2);
 
     }
     if (opp == ("*") || opp.includes("x" || opp.includes("X"))) {
-        console.log(multiply(number1, number2))
         return multiply(number1, number2);
 
     }
     if (opp == ("-")) {
-        console.log(subtract(number1, number2))
         return subtract(number1, number2);
 
     }
@@ -142,7 +138,7 @@ equalsbutton.addEventListener('click', function () {
         let su1 = parseFloat(n1);
         let su2 = parseFloat(n2);
         //Operation
-        operate(su1, su2);
+   //     operate(su1, su2);
         //Eventually: make it so that if this already happened, use the operate answer maybe as a element as the first thing inside of the container.
         if (operate(su1, su2) == su1 / 0) {
             otherdisplay.innerHTML = "YOU CANT DO THAT!!! STOP!!!"
