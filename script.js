@@ -88,6 +88,7 @@ reset.addEventListener('click', function () {
     bothnumbers = [];
     firstequationumber = [];
     max = 0;
+    ans = undefined;
 });
 //Plus button for addition
 plusbutton.addEventListener('click', function () {
@@ -97,7 +98,13 @@ plusbutton.addEventListener('click', function () {
     else {
         bothnumbers.splice(1, 1, firstequationumber);
     }
+    if (ans == undefined) {
     inputdisplay.innerHTML += " + ";
+    }
+    else {
+    inputdisplay.innerHTML = [];
+    inputdisplay.innerHTML += "ANS + ";
+    }
     firstequationumber = [];
     opp = ("+");
 
@@ -111,7 +118,13 @@ minusbutton.addEventListener('click', function () {
     else {
         bothnumbers.splice(1, 1, firstequationumber);
     }
-    inputdisplay.innerHTML += " - ";
+    if (ans == undefined) {
+        inputdisplay.innerHTML += " - ";
+        }
+        else {
+        inputdisplay.innerHTML = [];
+        inputdisplay.innerHTML += "ANS - ";
+        }
     firstequationumber = [];
     opp = ("-");
 
@@ -126,7 +139,13 @@ multiplybutton.addEventListener('click', function () {
     else {
         bothnumbers.splice(1, 1, firstequationumber);
     }
-    inputdisplay.innerHTML += " x ";
+    if (ans == undefined) {
+        inputdisplay.innerHTML += " x ";
+        }
+        else {
+        inputdisplay.innerHTML = [];
+        inputdisplay.innerHTML += "ANS x ";
+        }
     firstequationumber = [];
     opp = ("*");
 
@@ -141,7 +160,13 @@ divisionbutton.addEventListener('click', function () {
     else {
         bothnumbers.splice(1, 1, firstequationumber);
     }
-    inputdisplay.innerHTML += " / ";
+    if (ans == undefined) {
+        inputdisplay.innerHTML += " / ";
+        }
+        else {
+        inputdisplay.innerHTML = [];
+        inputdisplay.innerHTML += "ANS / ";
+        }
     firstequationumber = [];
     opp = ("/");
 
