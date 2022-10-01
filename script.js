@@ -56,6 +56,7 @@ let minusbutton = document.getElementById("-");
 let multiplybutton = document.getElementById("ex");
 let divisionbutton = document.getElementById("/");
 let resetbutton = document.getElementById("reset");
+let ans;
 //True false statements for deciding what calculation to do
 let ploose;
 let meenus;
@@ -163,7 +164,7 @@ equalsbutton.addEventListener('click', function () {
         //inside of the container.
         otherdisplay.innerHTML = operate(su1, su2);
         bothnumbers = [];
-        let ans = operate(su1, su2);
+         ans = operate(su1, su2);
         bothnumbers[0] = ans;
         console.log(bothnumbers);
         console.log('instance complete')
