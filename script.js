@@ -84,7 +84,7 @@ for (i = 0; i < allbuttons.length; i++) {
 reset.addEventListener('click', function () {
     inputdisplay.innerHTML = "";
     otherdisplay.innerHTML = "";
-    currentequation = [];
+    bothnumbers = [];
     firstequationumber = [];
     max = 0;
 });
@@ -94,11 +94,11 @@ plusbutton.addEventListener('click', function () {
         bothnumbers.splice(0, 1, firstequationumber);
     }
     else {
-        bothnumbers.splice(1,1, firstequationumber);
+        bothnumbers.splice(1, 1, firstequationumber);
     }
-        inputdisplay.innerHTML += " + ";
-        firstequationumber = [];
-        opp = ("+");
+    inputdisplay.innerHTML += " + ";
+    firstequationumber = [];
+    opp = ("+");
 
     console.log(bothnumbers);
 });
@@ -108,42 +108,42 @@ minusbutton.addEventListener('click', function () {
         bothnumbers.splice(0, 1, firstequationumber);
     }
     else {
-        bothnumbers.splice(1,1, firstequationumber);
+        bothnumbers.splice(1, 1, firstequationumber);
     }
-        inputdisplay.innerHTML += " - ";
-        firstequationumber = [];
-        opp = ("-");
-    
+    inputdisplay.innerHTML += " - ";
+    firstequationumber = [];
+    opp = ("-");
+
     console.log(bothnumbers);
 });
 //Multiplication button (self explanatory)
 multiplybutton.addEventListener('click', function () {
-    
+
     if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
     }
     else {
-        bothnumbers.splice(1,1, firstequationumber);
+        bothnumbers.splice(1, 1, firstequationumber);
     }
-        inputdisplay.innerHTML += " x ";
-        firstequationumber = [];
-        opp = ("*");
-    
+    inputdisplay.innerHTML += " x ";
+    firstequationumber = [];
+    opp = ("*");
+
     console.log(bothnumbers);
 });
 //Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
-   
+
     if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
     }
     else {
-        bothnumbers.splice(1,1, firstequationumber);
+        bothnumbers.splice(1, 1, firstequationumber);
     }
-        inputdisplay.innerHTML += " / ";
-        firstequationumber = [];
-        opp = ("/");
-    
+    inputdisplay.innerHTML += " / ";
+    firstequationumber = [];
+    opp = ("/");
+
     console.log(bothnumbers);
 });
 //Equals button to decide the type of calculation
@@ -157,20 +157,18 @@ equalsbutton.addEventListener('click', function () {
         let su1 = parseFloat(n1);
         let su2 = parseFloat(n2);
         //Operation
-   //     operate(su1, su2);
-        //Eventually: make it so that if this already happened, use the operate answer maybe as a element as the first thing inside of the container.
-        if (operate(su1, su2) == su1 / 0) {
-            otherdisplay.innerHTML = "YOU CANT DO THAT!!! STOP!!!"
-        }
+        //operate(su1, su2);
+        //Eventually: make it so that if this already happened, 
+        //use the operate answer maybe as a element as the first thing 
+        //inside of the container.
         otherdisplay.innerHTML = operate(su1, su2);
         bothnumbers = [];
         let ans = operate(su1, su2);
         bothnumbers[0] = ans;
         console.log(bothnumbers);
+        console.log('instance complete')
     }
 });
 
-//Current goal: allow for automatic third number after first and second have been
-//applied. There can only be one thing one at once.
-
-//also theres a problem with bothnumbers
+//Current goals: make equation stop after one instance unless it's adding onto
+//current answer. Make current answer appear on math board afterwards.
