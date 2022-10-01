@@ -90,8 +90,12 @@ reset.addEventListener('click', function () {
 });
 //Plus button for addition
 plusbutton.addEventListener('click', function () {
-   
+    if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
+    }
+    else {
+        bothnumbers.splice(1,1, firstequationumber);
+    }
         inputdisplay.innerHTML += " + ";
         firstequationumber = [];
         opp = ("+");
@@ -100,7 +104,12 @@ plusbutton.addEventListener('click', function () {
 });
 //Minus button for subtraction
 minusbutton.addEventListener('click', function () {
+    if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
+    }
+    else {
+        bothnumbers.splice(1,1, firstequationumber);
+    }
         inputdisplay.innerHTML += " - ";
         firstequationumber = [];
         opp = ("-");
@@ -110,7 +119,12 @@ minusbutton.addEventListener('click', function () {
 //Multiplication button (self explanatory)
 multiplybutton.addEventListener('click', function () {
     
+    if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
+    }
+    else {
+        bothnumbers.splice(1,1, firstequationumber);
+    }
         inputdisplay.innerHTML += " x ";
         firstequationumber = [];
         opp = ("*");
@@ -120,7 +134,12 @@ multiplybutton.addEventListener('click', function () {
 //Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
    
+    if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
+    }
+    else {
+        bothnumbers.splice(1,1, firstequationumber);
+    }
         inputdisplay.innerHTML += " / ";
         firstequationumber = [];
         opp = ("/");
@@ -129,7 +148,7 @@ divisionbutton.addEventListener('click', function () {
 });
 //Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
-    console.log(firstequationumber);
+    console.log(bothnumbers);
     //To see if the first slot isnt already taken (Might need modded soon)
     if (bothnumbers.length != 0) {
         bothnumbers.splice(1, 1, firstequationumber);
@@ -145,7 +164,9 @@ equalsbutton.addEventListener('click', function () {
         }
         otherdisplay.innerHTML = operate(su1, su2);
         bothnumbers = [];
-        bothnumbers[0] = operate(su1, su2);
+        let ans = operate(su1, su2);
+        bothnumbers[0] = ans;
+        console.log(bothnumbers);
     }
 });
 
