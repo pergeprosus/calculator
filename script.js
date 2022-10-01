@@ -99,11 +99,11 @@ plusbutton.addEventListener('click', function () {
         bothnumbers.splice(1, 1, firstequationumber);
     }
     if (ans == undefined) {
-    inputdisplay.innerHTML += " + ";
+        inputdisplay.innerHTML += " + ";
     }
     else {
-    inputdisplay.innerHTML = [];
-    inputdisplay.innerHTML += "ANS + ";
+        inputdisplay.innerHTML = [];
+        inputdisplay.innerHTML += "ANS + ";
     }
     firstequationumber = [];
     opp = ("+");
@@ -120,11 +120,11 @@ minusbutton.addEventListener('click', function () {
     }
     if (ans == undefined) {
         inputdisplay.innerHTML += " - ";
-        }
-        else {
+    }
+    else {
         inputdisplay.innerHTML = [];
         inputdisplay.innerHTML += "ANS - ";
-        }
+    }
     firstequationumber = [];
     opp = ("-");
 
@@ -141,11 +141,11 @@ multiplybutton.addEventListener('click', function () {
     }
     if (ans == undefined) {
         inputdisplay.innerHTML += " x ";
-        }
-        else {
+    }
+    else {
         inputdisplay.innerHTML = [];
         inputdisplay.innerHTML += "ANS x ";
-        }
+    }
     firstequationumber = [];
     opp = ("*");
 
@@ -162,11 +162,11 @@ divisionbutton.addEventListener('click', function () {
     }
     if (ans == undefined) {
         inputdisplay.innerHTML += " / ";
-        }
-        else {
+    }
+    else {
         inputdisplay.innerHTML = [];
         inputdisplay.innerHTML += "ANS / ";
-        }
+    }
     firstequationumber = [];
     opp = ("/");
 
@@ -188,14 +188,14 @@ equalsbutton.addEventListener('click', function () {
         //use the operate answer maybe as a element as the first thing 
         //inside of the container.
         let testresult = operate(su1, su2);
-        if (testresult.isNaN = true || testresult == Infinity) {
-            otherdisplay.innerHTML = "ERROR";
+        if (testresult == Infinity || isNaN(testresult)) {
+            otherdisplay.innerHTML = "YOU CAN'T DO THAT";
         }
         else {
             otherdisplay.innerHTML = operate(su1, su2);
         }
         bothnumbers = [];
-         ans = operate(su1, su2);
+        ans = operate(su1, su2);
         bothnumbers[0] = ans;
         console.log(bothnumbers);
         console.log('instance complete')
