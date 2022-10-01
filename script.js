@@ -188,7 +188,7 @@ equalsbutton.addEventListener('click', function () {
         //use the operate answer maybe as a element as the first thing 
         //inside of the container.
         let testresult = operate(su1, su2);
-        if (testresult.isNaN = true) {
+        if (testresult.isNaN = true || testresult == Infinity) {
             otherdisplay.innerHTML = "ERROR";
         }
         else {
