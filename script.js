@@ -187,7 +187,13 @@ equalsbutton.addEventListener('click', function () {
         //Eventually: make it so that if this already happened, 
         //use the operate answer maybe as a element as the first thing 
         //inside of the container.
-        otherdisplay.innerHTML = operate(su1, su2);
+        let testresult = operate(su1, su2);
+        if (testresult.isNaN = true) {
+            otherdisplay.innerHTML = "ERROR";
+        }
+        else {
+            otherdisplay.innerHTML = operate(su1, su2);
+        }
         bothnumbers = [];
          ans = operate(su1, su2);
         bothnumbers[0] = ans;
@@ -196,5 +202,4 @@ equalsbutton.addEventListener('click', function () {
     }
 });
 
-//Current goals: make equation stop after one instance unless it's adding onto
-//current answer. Make current answer appear on math board afterwards.
+//CURRENT GOAL: ADD A CHECK FOR ONLY ADDING 2 NUMBERS AT A TIME
