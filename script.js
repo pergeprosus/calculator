@@ -75,7 +75,7 @@ for (i = 0; i < allbuttons.length; i++) {
             // if (typeof firstequationumber != []])
             parseFloat(but.id);
             firstequationumber += but.id;
-            inputdisplay.innerHTML += but.id
+          //  inputdisplay.innerHTML += but.id
             max++;
             console.log(firstequationumber);
         }
@@ -92,6 +92,7 @@ reset.addEventListener('click', function () {
 });
 //Plus button for addition
 plusbutton.addEventListener('click', function () {
+    inputdisplay.innerHTML += firstequationumber;
     if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
     }
@@ -112,6 +113,7 @@ plusbutton.addEventListener('click', function () {
 });
 //Minus button for subtraction
 minusbutton.addEventListener('click', function () {
+    inputdisplay.innerHTML += firstequationumber;
     if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
     }
@@ -132,6 +134,7 @@ minusbutton.addEventListener('click', function () {
 });
 //Multiplication button (self explanatory)
 multiplybutton.addEventListener('click', function () {
+    inputdisplay.innerHTML += firstequationumber;
 
     if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
@@ -153,6 +156,7 @@ multiplybutton.addEventListener('click', function () {
 });
 //Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
+    inputdisplay.innerHTML += firstequationumber;
 
     if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
@@ -174,6 +178,7 @@ divisionbutton.addEventListener('click', function () {
 });
 //Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
+    inputdisplay.innerHTML += firstequationumber
     console.log(bothnumbers);
     //To see if the first slot isnt already taken (Might need modded soon)
     if (bothnumbers.length != 0) {
@@ -189,7 +194,7 @@ equalsbutton.addEventListener('click', function () {
         //inside of the container.
         let testresult = operate(su1, su2);
         if (testresult == Infinity || isNaN(testresult)) {
-            otherdisplay.innerHTML = "YOU CAN'T DO THAT";
+            otherdisplay.innerHTML = "BRUH";
         }
         else {
             otherdisplay.innerHTML = operate(su1, su2);
