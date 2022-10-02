@@ -75,7 +75,7 @@ for (i = 0; i < allbuttons.length; i++) {
             otherdisplay.innerHTML += but.id;
             // if (typeof firstequationumber != []])
             parseFloat(but.id);
-            firstequationumber += but.id;
+            firstequationumber += parseFloat(but.id);
           //  inputdisplay.innerHTML += but.id
             max++;
             console.log(firstequationumber);
@@ -137,6 +137,25 @@ minusbutton.addEventListener('click', function () {
 });
 //Multiplication button (self explanatory)
 multiplybutton.addEventListener('click', function () {
+    if (bothnumbers.length != 0) {
+        bothnumbers.splice(1, 1, firstequationumber);
+        let n1 = bothnumbers[0];
+        let n2 = bothnumbers[1];
+        let su1 = parseFloat(n1);
+        let su2 = parseFloat(n2);
+        let testresult = operate(su1, su2);
+        if (testresult == Infinity || isNaN(testresult)) {
+            otherdisplay.innerHTML = "BRUH";
+        }
+        else {
+            otherdisplay.innerHTML = operate(su1, su2);
+        }
+        bothnumbers = [];
+        ans = operate(su1, su2);
+        bothnumbers[0] = ans;
+        console.log(bothnumbers);
+        console.log('instance complete')
+    }
     inputdisplay.innerHTML += firstequationumber;
     otherdisplay.innerHTML = "";
 
@@ -150,7 +169,8 @@ multiplybutton.addEventListener('click', function () {
         inputdisplay.innerHTML += " x ";
     }
     else {
-        inputdisplay.innerHTML = [];
+        otherdisplay.innerHTML = [ans];
+        inputdisplay.innerHTML = "";
         inputdisplay.innerHTML += "ANS x ";
     }
     firstequationumber = [];
@@ -183,7 +203,7 @@ divisionbutton.addEventListener('click', function () {
 });
 //Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
-    inputdisplay.innerHTML += firstequationumber
+    inputdisplay.innerHTML += firstequationumber;
     console.log(bothnumbers);
     //To see if the first slot isnt already taken (Might need modded soon)
     if (bothnumbers.length != 0) {
@@ -192,11 +212,6 @@ equalsbutton.addEventListener('click', function () {
         let n2 = bothnumbers[1];
         let su1 = parseFloat(n1);
         let su2 = parseFloat(n2);
-        //Operation
-        //operate(su1, su2);
-        //Eventually: make it so that if this already happened, 
-        //use the operate answer maybe as a element as the first thing 
-        //inside of the container.
         let testresult = operate(su1, su2);
         if (testresult == Infinity || isNaN(testresult)) {
             otherdisplay.innerHTML = "BRUH";
