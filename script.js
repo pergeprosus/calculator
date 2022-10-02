@@ -56,6 +56,7 @@ let minusbutton = document.getElementById("-");
 let multiplybutton = document.getElementById("ex");
 let divisionbutton = document.getElementById("/");
 let resetbutton = document.getElementById("reset");
+let back = document.getElementById("back");
 let ans;
 //True false statements for deciding what calculation to do
 let ploose;
@@ -72,14 +73,29 @@ for (i = 0; i < allbuttons.length; i++) {
     let but = allbuttons[i];
     allbuttons[i].addEventListener('click', function () {
         if (max < 12) {
-            if (ans == undefined){
-            otherdisplay.innerHTML += but.id;
-            // if (typeof firstequationumber != []])
-            parseFloat(but.id);
-            firstequationumber += parseFloat(but.id);
-            //  inputdisplay.innerHTML += but.id
-            max++;
-            console.log(firstequationumber);
+            if (ans == undefined) {
+                otherdisplay.innerHTML += but.id;
+                // if (typeof firstequationumber != []])
+                parseFloat(but.id);
+                firstequationumber += parseFloat(but.id);
+                //  inputdisplay.innerHTML += but.id
+                max++;
+                console.log(firstequationumber);
+            }
+            else {
+                inputdisplay.innerHTML = "";
+                otherdisplay.innerHTML = "";
+                bothnumbers = [];
+                firstequationumber = [];
+                max = 0;
+                ans = undefined;
+                otherdisplay.innerHTML += but.id;
+                // if (typeof firstequationumber != []])
+                parseFloat(but.id);
+                firstequationumber += parseFloat(but.id);
+                //  inputdisplay.innerHTML += but.id
+                max++;
+                console.log(firstequationumber);
             }
         }
     })
@@ -220,6 +236,11 @@ multiplybutton.addEventListener('click', function () {
 
     console.log(bothnumbers);
 });
+//Backspace
+back.addEventListener('click', function () {
+    otherdisplay.innerHTML = otherdisplay.innerHTML.substring(0, otherdisplay.innerHTML.length - 1);
+  
+});
 //Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
     if (bothnumbers.length != 0) {
@@ -266,29 +287,29 @@ divisionbutton.addEventListener('click', function () {
 //Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
     if (ans == undefined) {
-    inputdisplay.innerHTML += firstequationumber;
-    console.log(bothnumbers);
-    //To see if the first slot isnt already taken (Might need modded soon)
-    if (bothnumbers.length != 0) {
-        bothnumbers.splice(1, 1, firstequationumber);
-        let n1 = bothnumbers[0];
-        let n2 = bothnumbers[1];
-        let su1 = parseFloat(n1);
-        let su2 = parseFloat(n2);
-        let testresult = operate(su1, su2);
-        if (testresult == Infinity || isNaN(testresult)) {
-            otherdisplay.innerHTML = "BRUH";
-        }
-        else {
-            otherdisplay.innerHTML = operate(su1, su2);
-        }
-        bothnumbers = [];
-        ans = operate(su1, su2);
-        bothnumbers[0] = ans;
+        inputdisplay.innerHTML += firstequationumber;
         console.log(bothnumbers);
-        console.log('instance complete')
+        //To see if the first slot isnt already taken (Might need modded soon)
+        if (bothnumbers.length != 0) {
+            bothnumbers.splice(1, 1, firstequationumber);
+            let n1 = bothnumbers[0];
+            let n2 = bothnumbers[1];
+            let su1 = parseFloat(n1);
+            let su2 = parseFloat(n2);
+            let testresult = operate(su1, su2);
+            if (testresult == Infinity || isNaN(testresult)) {
+                otherdisplay.innerHTML = "BRUH";
+            }
+            else {
+                otherdisplay.innerHTML = operate(su1, su2);
+            }
+            bothnumbers = [];
+            ans = operate(su1, su2);
+            bothnumbers[0] = ans;
+            console.log(bothnumbers);
+            console.log('instance complete')
+        }
     }
-}
 });
 
 //CURRENT GOAL: ADD A CHECK FOR ONLY ADDING 2 NUMBERS AT A TIME
