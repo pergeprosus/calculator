@@ -72,6 +72,7 @@ for (i = 0; i < allbuttons.length; i++) {
     let but = allbuttons[i];
     allbuttons[i].addEventListener('click', function () {
         if (max < 12) {
+            if (ans == undefined){
             otherdisplay.innerHTML += but.id;
             // if (typeof firstequationumber != []])
             parseFloat(but.id);
@@ -79,6 +80,7 @@ for (i = 0; i < allbuttons.length; i++) {
             //  inputdisplay.innerHTML += but.id
             max++;
             console.log(firstequationumber);
+            }
         }
     })
 }
@@ -263,6 +265,7 @@ divisionbutton.addEventListener('click', function () {
 });
 //Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
+    if (ans == undefined) {
     inputdisplay.innerHTML += firstequationumber;
     console.log(bothnumbers);
     //To see if the first slot isnt already taken (Might need modded soon)
@@ -285,6 +288,7 @@ equalsbutton.addEventListener('click', function () {
         console.log(bothnumbers);
         console.log('instance complete')
     }
+}
 });
 
 //CURRENT GOAL: ADD A CHECK FOR ONLY ADDING 2 NUMBERS AT A TIME
