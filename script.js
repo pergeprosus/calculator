@@ -239,7 +239,20 @@ multiplybutton.addEventListener('click', function () {
 //Backspace
 back.addEventListener('click', function () {
     otherdisplay.innerHTML = otherdisplay.innerHTML.substring(0, otherdisplay.innerHTML.length - 1);
-  
+    firstequationumber = Math.floor(firstequationumber / 10);
+    if (max > 0) {
+        max--;
+    }
+    console.log(firstequationumber);
+    if (firstequationumber == 0) {
+        inputdisplay.innerHTML = "";
+        otherdisplay.innerHTML = "";
+        bothnumbers = [];
+        firstequationumber = [];
+        max = 0;
+        ans = undefined;
+    }
+
 });
 //Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
