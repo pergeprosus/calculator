@@ -72,6 +72,7 @@ for (i = 0; i < allbuttons.length; i++) {
     let but = allbuttons[i];
     allbuttons[i].addEventListener('click', function () {
         if (max < 12) {
+            otherdisplay.innerHTML += but.id;
             // if (typeof firstequationumber != []])
             parseFloat(but.id);
             firstequationumber += but.id;
@@ -93,6 +94,7 @@ reset.addEventListener('click', function () {
 //Plus button for addition
 plusbutton.addEventListener('click', function () {
     inputdisplay.innerHTML += firstequationumber;
+    otherdisplay.innerHTML = "";
     if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
     }
@@ -114,6 +116,7 @@ plusbutton.addEventListener('click', function () {
 //Minus button for subtraction
 minusbutton.addEventListener('click', function () {
     inputdisplay.innerHTML += firstequationumber;
+    otherdisplay.innerHTML = "";
     if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
     }
@@ -135,6 +138,7 @@ minusbutton.addEventListener('click', function () {
 //Multiplication button (self explanatory)
 multiplybutton.addEventListener('click', function () {
     inputdisplay.innerHTML += firstequationumber;
+    otherdisplay.innerHTML = "";
 
     if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
@@ -157,6 +161,7 @@ multiplybutton.addEventListener('click', function () {
 //Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
     inputdisplay.innerHTML += firstequationumber;
+    otherdisplay.innerHTML = "";
 
     if (firstequationumber[0] == []) {
         bothnumbers.splice(0, 1, firstequationumber);
