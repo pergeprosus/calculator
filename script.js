@@ -76,7 +76,7 @@ for (i = 0; i < allbuttons.length; i++) {
             // if (typeof firstequationumber != []])
             parseFloat(but.id);
             firstequationumber += parseFloat(but.id);
-          //  inputdisplay.innerHTML += but.id
+            //  inputdisplay.innerHTML += but.id
             max++;
             console.log(firstequationumber);
         }
@@ -93,6 +93,25 @@ reset.addEventListener('click', function () {
 });
 //Plus button for addition
 plusbutton.addEventListener('click', function () {
+    if (bothnumbers.length != 0) {
+        bothnumbers.splice(1, 1, firstequationumber);
+        let n1 = bothnumbers[0];
+        let n2 = bothnumbers[1];
+        let su1 = parseFloat(n1);
+        let su2 = parseFloat(n2);
+        let testresult = operate(su1, su2);
+        if (testresult == Infinity || isNaN(testresult)) {
+            otherdisplay.innerHTML = "BRUH";
+        }
+        else {
+            otherdisplay.innerHTML = operate(su1, su2);
+        }
+        bothnumbers = [];
+        ans = operate(su1, su2);
+        bothnumbers[0] = ans;
+        console.log(bothnumbers);
+        console.log('instance complete')
+    }
     inputdisplay.innerHTML += firstequationumber;
     otherdisplay.innerHTML = "";
     if (firstequationumber[0] == []) {
@@ -105,8 +124,9 @@ plusbutton.addEventListener('click', function () {
         inputdisplay.innerHTML += " + ";
     }
     else {
-        inputdisplay.innerHTML = [];
-        inputdisplay.innerHTML += "ANS + ";
+        otherdisplay.innerHTML = "";
+        inputdisplay.innerHTML = "";
+        inputdisplay.innerHTML += " " + ans + " + ";
     }
     firstequationumber = [];
     opp = ("+");
@@ -115,6 +135,25 @@ plusbutton.addEventListener('click', function () {
 });
 //Minus button for subtraction
 minusbutton.addEventListener('click', function () {
+    if (bothnumbers.length != 0) {
+        bothnumbers.splice(1, 1, firstequationumber);
+        let n1 = bothnumbers[0];
+        let n2 = bothnumbers[1];
+        let su1 = parseFloat(n1);
+        let su2 = parseFloat(n2);
+        let testresult = operate(su1, su2);
+        if (testresult == Infinity || isNaN(testresult)) {
+            otherdisplay.innerHTML = "BRUH";
+        }
+        else {
+            otherdisplay.innerHTML = operate(su1, su2);
+        }
+        bothnumbers = [];
+        ans = operate(su1, su2);
+        bothnumbers[0] = ans;
+        console.log(bothnumbers);
+        console.log('instance complete')
+    }
     inputdisplay.innerHTML += firstequationumber;
     otherdisplay.innerHTML = "";
     if (firstequationumber[0] == []) {
@@ -127,8 +166,9 @@ minusbutton.addEventListener('click', function () {
         inputdisplay.innerHTML += " - ";
     }
     else {
-        inputdisplay.innerHTML = [];
-        inputdisplay.innerHTML += "ANS - ";
+        otherdisplay.innerHTML = "";
+        inputdisplay.innerHTML = "";
+        inputdisplay.innerHTML += " " + ans + " - ";
     }
     firstequationumber = [];
     opp = ("-");
@@ -169,9 +209,9 @@ multiplybutton.addEventListener('click', function () {
         inputdisplay.innerHTML += " x ";
     }
     else {
-        otherdisplay.innerHTML = [ans];
+        otherdisplay.innerHTML = "";
         inputdisplay.innerHTML = "";
-        inputdisplay.innerHTML += "ANS x ";
+        inputdisplay.innerHTML += " " + ans + " x ";
     }
     firstequationumber = [];
     opp = ("*");
@@ -180,6 +220,25 @@ multiplybutton.addEventListener('click', function () {
 });
 //Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
+    if (bothnumbers.length != 0) {
+        bothnumbers.splice(1, 1, firstequationumber);
+        let n1 = bothnumbers[0];
+        let n2 = bothnumbers[1];
+        let su1 = parseFloat(n1);
+        let su2 = parseFloat(n2);
+        let testresult = operate(su1, su2);
+        if (testresult == Infinity || isNaN(testresult)) {
+            otherdisplay.innerHTML = "BRUH";
+        }
+        else {
+            otherdisplay.innerHTML = operate(su1, su2);
+        }
+        bothnumbers = [];
+        ans = operate(su1, su2);
+        bothnumbers[0] = ans;
+        console.log(bothnumbers);
+        console.log('instance complete')
+    }
     inputdisplay.innerHTML += firstequationumber;
     otherdisplay.innerHTML = "";
 
@@ -193,8 +252,9 @@ divisionbutton.addEventListener('click', function () {
         inputdisplay.innerHTML += " / ";
     }
     else {
-        inputdisplay.innerHTML = [];
-        inputdisplay.innerHTML += "ANS / ";
+        otherdisplay.innerHTML = "";
+        inputdisplay.innerHTML = "";
+        inputdisplay.innerHTML += " " + ans + " / ";
     }
     firstequationumber = [];
     opp = ("/");
