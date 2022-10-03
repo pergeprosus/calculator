@@ -256,6 +256,7 @@ back.addEventListener('click', function () {
 });
 //Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
+    if (ans == undefined) {
     if (bothnumbers.length != 0) {
         bothnumbers.splice(1, 1, firstequationumber);
         let n1 = bothnumbers[0];
@@ -284,18 +285,13 @@ divisionbutton.addEventListener('click', function () {
     else {
         bothnumbers.splice(1, 1, firstequationumber);
     }
-    if (ans == undefined) {
         inputdisplay.innerHTML += " / ";
-    }
-    else {
-        otherdisplay.innerHTML = "";
-        inputdisplay.innerHTML = "";
-        inputdisplay.innerHTML += " " + ans + " / ";
-    }
-    firstequationumber = [];
+        firstequationumber = [];
+
     opp = ("/");
 
     console.log(bothnumbers);
+}
 });
 //Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
