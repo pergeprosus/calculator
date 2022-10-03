@@ -108,10 +108,11 @@ reset.addEventListener('click', function () {
     firstequationumber = [];
     max = 0;
     ans = undefined;
+    opp = undefined;
 });
 //Plus button for addition
 plusbutton.addEventListener('click', function () {
-    if (ans == undefined) {
+    if (ans == undefined && opp == undefined) {
     if (bothnumbers.length != 0) {
         bothnumbers.splice(1, 1, firstequationumber);
         let n1 = bothnumbers[0];
@@ -149,7 +150,7 @@ plusbutton.addEventListener('click', function () {
 });
 //Minus button for subtraction
 minusbutton.addEventListener('click', function () {
-    if (ans == undefined) {
+    if (ans == undefined && opp == undefined) {
         if (bothnumbers.length != 0) {
             bothnumbers.splice(1, 1, firstequationumber);
             let n1 = bothnumbers[0];
@@ -187,7 +188,7 @@ minusbutton.addEventListener('click', function () {
 });
 //Multiplication button (self explanatory)
 multiplybutton.addEventListener('click', function () {
-    if (ans == undefined) {
+    if (ans == undefined && opp == undefined) {
         if (bothnumbers.length != 0) {
             bothnumbers.splice(1, 1, firstequationumber);
             let n1 = bothnumbers[0];
@@ -216,7 +217,7 @@ multiplybutton.addEventListener('click', function () {
         else {
             bothnumbers.splice(1, 1, firstequationumber);
         }
-        inputdisplay.innerHTML += " X ";
+        inputdisplay.innerHTML += " x ";
         firstequationumber = [];
 
         opp = ("*");
@@ -244,7 +245,7 @@ back.addEventListener('click', function () {
 });
 //Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
-    if (ans == undefined) {
+    if (ans == undefined && opp == undefined) {
         if (bothnumbers.length != 0) {
             bothnumbers.splice(1, 1, firstequationumber);
             let n1 = bothnumbers[0];
