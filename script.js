@@ -311,7 +311,7 @@ equalsbutton.addEventListener('click', function () {
             let su2 = parseFloat(n2);
             let testresult = operate(su1, su2);
             if (testresult == Infinity || isNaN(testresult)) {
-                otherdisplay.innerHTML = "BRUH";
+                otherdisplay.innerHTML = "SYNTAX OOPSIE";
             }
             else {
                 otherdisplay.innerHTML = operate(su1, su2);
