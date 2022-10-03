@@ -71,11 +71,11 @@ let bothnumbers = [];
 let toggle = 0;
 lights.addEventListener('click', function () {
     if (toggle == 0) {
-        document.getElementById("calcbody").style.backgroundColor = "pink";
+        document.getElementById("calcbody").style.boxShadow = "-1vh 1vh 70vw white";
         toggle = 1;
     }
     else {
-        document.getElementById("calcbody").style.backgroundColor = "blue";
+        document.getElementById("calcbody").style.boxShadow = "0vh 0vh 0vw #1a6a19";
         toggle = 0;
     }
 });

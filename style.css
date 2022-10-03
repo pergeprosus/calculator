@@ -19,7 +19,7 @@ body, html {
     margin-top: 10vh;
     flex-direction: column;
     border-radius: 2vh;
-    box-shadow: -1vh 1vh 10vw #1A6A19;
+    box-shadow: 0;
     border: 2px solid black;
 }
 
