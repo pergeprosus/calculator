@@ -285,7 +285,7 @@ divisionbutton.addEventListener('click', function () {
 });
 //Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
-    if (ans == undefined) {
+    if (ans == undefined && bothnumbers[0] !== undefined) {
         inputdisplay.innerHTML += firstequationumber;
         console.log(bothnumbers);
         //To see if the first slot isnt already taken (Might need modded soon)
@@ -311,4 +311,4 @@ equalsbutton.addEventListener('click', function () {
     }
 });
 
-//CURRENT GOAL: ADD A CHECK FOR ONLY ADDING 2 NUMBERS AT A TIME
+//CURRENT GOAL: FIX DOUBLE NUMBERING WHEN EQUALING FIRST
