@@ -89,6 +89,7 @@ for (i = 0; i < allbuttons.length; i++) {
                 firstequationumber = [];
                 max = 0;
                 ans = undefined;
+                opp = undefined;
                 otherdisplay.innerHTML += but.id;
                 // if (typeof firstequationumber != []])
                 parseFloat(but.id);
