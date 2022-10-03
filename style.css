@@ -124,3 +124,8 @@ margin-left: 1%;
 font-weight: bolder;
 
 }
+
+h2 {
+    margin-left: 0.5vh;
+    margin-top: 0;
+}
