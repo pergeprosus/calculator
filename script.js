@@ -111,6 +111,7 @@ reset.addEventListener('click', function () {
 });
 //Plus button for addition
 plusbutton.addEventListener('click', function () {
+    if (ans == undefined) {
     if (bothnumbers.length != 0) {
         bothnumbers.splice(1, 1, firstequationumber);
         let n1 = bothnumbers[0];
@@ -138,103 +139,90 @@ plusbutton.addEventListener('click', function () {
     else {
         bothnumbers.splice(1, 1, firstequationumber);
     }
-    if (ans == undefined) {
-        inputdisplay.innerHTML += " + ";
-    }
-    else {
-        otherdisplay.innerHTML = "";
-        inputdisplay.innerHTML = "";
-        inputdisplay.innerHTML += " " + ans + " + ";
-    }
-    firstequationumber = [];
-    opp = ("+");
+    inputdisplay.innerHTML += " + ";
+        firstequationumber = [];
+
+        opp = ("+");
 
     console.log(bothnumbers);
+}
 });
 //Minus button for subtraction
 minusbutton.addEventListener('click', function () {
-    if (bothnumbers.length != 0) {
-        bothnumbers.splice(1, 1, firstequationumber);
-        let n1 = bothnumbers[0];
-        let n2 = bothnumbers[1];
-        let su1 = parseFloat(n1);
-        let su2 = parseFloat(n2);
-        let testresult = operate(su1, su2);
-        if (testresult == Infinity || isNaN(testresult)) {
-            otherdisplay.innerHTML = "BRUH";
+    if (ans == undefined) {
+        if (bothnumbers.length != 0) {
+            bothnumbers.splice(1, 1, firstequationumber);
+            let n1 = bothnumbers[0];
+            let n2 = bothnumbers[1];
+            let su1 = parseFloat(n1);
+            let su2 = parseFloat(n2);
+            let testresult = operate(su1, su2);
+            if (testresult == Infinity || isNaN(testresult)) {
+                otherdisplay.innerHTML = "BRUH";
+            }
+            else {
+                otherdisplay.innerHTML = operate(su1, su2);
+            }
+            bothnumbers = [];
+            ans = operate(su1, su2);
+            bothnumbers[0] = ans;
+            console.log(bothnumbers);
+            console.log('instance complete')
+        }
+        inputdisplay.innerHTML += firstequationumber;
+        otherdisplay.innerHTML = "";
+        if (firstequationumber[0] == []) {
+            bothnumbers.splice(0, 1, firstequationumber);
         }
         else {
-            otherdisplay.innerHTML = operate(su1, su2);
+            bothnumbers.splice(1, 1, firstequationumber);
         }
-        bothnumbers = [];
-        ans = operate(su1, su2);
-        bothnumbers[0] = ans;
-        console.log(bothnumbers);
-        console.log('instance complete')
-    }
-    inputdisplay.innerHTML += firstequationumber;
-    otherdisplay.innerHTML = "";
-    if (firstequationumber[0] == []) {
-        bothnumbers.splice(0, 1, firstequationumber);
-    }
-    else {
-        bothnumbers.splice(1, 1, firstequationumber);
-    }
-    if (ans == undefined) {
         inputdisplay.innerHTML += " - ";
-    }
-    else {
-        otherdisplay.innerHTML = "";
-        inputdisplay.innerHTML = "";
-        inputdisplay.innerHTML += " " + ans + " - ";
-    }
-    firstequationumber = [];
-    opp = ("-");
+        firstequationumber = [];
 
-    console.log(bothnumbers);
+        opp = ("-");
+
+        console.log(bothnumbers);
+    }
 });
 //Multiplication button (self explanatory)
 multiplybutton.addEventListener('click', function () {
-    if (bothnumbers.length != 0) {
-        bothnumbers.splice(1, 1, firstequationumber);
-        let n1 = bothnumbers[0];
-        let n2 = bothnumbers[1];
-        let su1 = parseFloat(n1);
-        let su2 = parseFloat(n2);
-        let testresult = operate(su1, su2);
-        if (testresult == Infinity || isNaN(testresult)) {
-            otherdisplay.innerHTML = "BRUH";
+    if (ans == undefined) {
+        if (bothnumbers.length != 0) {
+            bothnumbers.splice(1, 1, firstequationumber);
+            let n1 = bothnumbers[0];
+            let n2 = bothnumbers[1];
+            let su1 = parseFloat(n1);
+            let su2 = parseFloat(n2);
+            let testresult = operate(su1, su2);
+            if (testresult == Infinity || isNaN(testresult)) {
+                otherdisplay.innerHTML = "BRUH";
+            }
+            else {
+                otherdisplay.innerHTML = operate(su1, su2);
+            }
+            bothnumbers = [];
+            ans = operate(su1, su2);
+            bothnumbers[0] = ans;
+            console.log(bothnumbers);
+            console.log('instance complete')
+        }
+        inputdisplay.innerHTML += firstequationumber;
+        otherdisplay.innerHTML = "";
+
+        if (firstequationumber[0] == []) {
+            bothnumbers.splice(0, 1, firstequationumber);
         }
         else {
-            otherdisplay.innerHTML = operate(su1, su2);
+            bothnumbers.splice(1, 1, firstequationumber);
         }
-        bothnumbers = [];
-        ans = operate(su1, su2);
-        bothnumbers[0] = ans;
+        inputdisplay.innerHTML += " X ";
+        firstequationumber = [];
+
+        opp = ("*");
+
         console.log(bothnumbers);
-        console.log('instance complete')
     }
-    inputdisplay.innerHTML += firstequationumber;
-    otherdisplay.innerHTML = "";
-
-    if (firstequationumber[0] == []) {
-        bothnumbers.splice(0, 1, firstequationumber);
-    }
-    else {
-        bothnumbers.splice(1, 1, firstequationumber);
-    }
-    if (ans == undefined) {
-        inputdisplay.innerHTML += " x ";
-    }
-    else {
-        otherdisplay.innerHTML = "";
-        inputdisplay.innerHTML = "";
-        inputdisplay.innerHTML += " " + ans + " x ";
-    }
-    firstequationumber = [];
-    opp = ("*");
-
-    console.log(bothnumbers);
 });
 //Backspace
 back.addEventListener('click', function () {
@@ -257,41 +245,41 @@ back.addEventListener('click', function () {
 //Division button (self explanatory)
 divisionbutton.addEventListener('click', function () {
     if (ans == undefined) {
-    if (bothnumbers.length != 0) {
-        bothnumbers.splice(1, 1, firstequationumber);
-        let n1 = bothnumbers[0];
-        let n2 = bothnumbers[1];
-        let su1 = parseFloat(n1);
-        let su2 = parseFloat(n2);
-        let testresult = operate(su1, su2);
-        if (testresult == Infinity || isNaN(testresult)) {
-            otherdisplay.innerHTML = "BRUH";
+        if (bothnumbers.length != 0) {
+            bothnumbers.splice(1, 1, firstequationumber);
+            let n1 = bothnumbers[0];
+            let n2 = bothnumbers[1];
+            let su1 = parseFloat(n1);
+            let su2 = parseFloat(n2);
+            let testresult = operate(su1, su2);
+            if (testresult == Infinity || isNaN(testresult)) {
+                otherdisplay.innerHTML = "BRUH";
+            }
+            else {
+                otherdisplay.innerHTML = operate(su1, su2);
+            }
+            bothnumbers = [];
+            ans = operate(su1, su2);
+            bothnumbers[0] = ans;
+            console.log(bothnumbers);
+            console.log('instance complete')
+        }
+        inputdisplay.innerHTML += firstequationumber;
+        otherdisplay.innerHTML = "";
+
+        if (firstequationumber[0] == []) {
+            bothnumbers.splice(0, 1, firstequationumber);
         }
         else {
-            otherdisplay.innerHTML = operate(su1, su2);
+            bothnumbers.splice(1, 1, firstequationumber);
         }
-        bothnumbers = [];
-        ans = operate(su1, su2);
-        bothnumbers[0] = ans;
-        console.log(bothnumbers);
-        console.log('instance complete')
-    }
-    inputdisplay.innerHTML += firstequationumber;
-    otherdisplay.innerHTML = "";
-
-    if (firstequationumber[0] == []) {
-        bothnumbers.splice(0, 1, firstequationumber);
-    }
-    else {
-        bothnumbers.splice(1, 1, firstequationumber);
-    }
         inputdisplay.innerHTML += " / ";
         firstequationumber = [];
 
-    opp = ("/");
+        opp = ("/");
 
-    console.log(bothnumbers);
-}
+        console.log(bothnumbers);
+    }
 });
 //Equals button to decide the type of calculation
 equalsbutton.addEventListener('click', function () {
