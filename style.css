@@ -138,3 +138,19 @@ h2 {
     color: white;
     text-shadow: 1px 1px black;
 }
+
+
+.pinky {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    text-align: center;
+    width: 50vh;
+    height: 70%;
+    background-color: pink;
+    margin-top: 10vh;
+    flex-direction: column;
+    border-radius: 2vh;
+    box-shadow: -1vh 1vh 10vw #1A6A19;
+    border: 2px solid black;
+}

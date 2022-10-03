@@ -68,6 +68,25 @@ let max = 0;
 //Array to store the current equation
 let firstequationumber = [];
 let bothnumbers = [];
+let toggle = 0;
+lights.addEventListener('click', function () {
+    if (toggle == 0) {
+        document.getElementById("calcbody").style.backgroundColor = "pink";
+        toggle = 1;
+    }
+    else {
+        document.getElementById("calcbody").style.backgroundColor = "blue";
+        toggle = 0;
+    }
+});
+
+
+
+
+
+
+
+
 //Loop for adding click function to each button, and storing their ID
 for (i = 0; i < allbuttons.length; i++) {
     let but = allbuttons[i];
